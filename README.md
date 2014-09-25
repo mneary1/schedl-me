@@ -1,2 +1,3 @@
-mygithubpage
+schedl.me
 ============
+
