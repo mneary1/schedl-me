@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  {% block title %}<title>schedl.me</title>{% endblock %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  {% block header %}
+  <header>
+    <h1>schedl.me</h1>
+  </header>
+  {% endblock %}
+  {% block body %}{% endblock %}
+
+  {% block footer %}
+  <footer>
+    <p>Made with sleep deprivation and love by <a href="http://twitter.com/@jneal7492">Jeremy Neal</a> and <a href="http://twitter.com/@mneary5">Michael Neary</a>.</p>
+  </footer>
+  {% endblock %}
+  <p></p>
+</body>
+</html>
