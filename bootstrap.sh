@@ -7,4 +7,4 @@ rm -rf /var/www
 ln -fs /vagrant /var/www
 
 # Install python packages.
-pip install -r requirements.txt
+pip install -r /vagrant/requirements.txt
