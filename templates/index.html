@@ -1,1 +1,14 @@
 {% extends "base.html" %}
+{% block body %}
+    <div id="signinButton">
+      <span class="g-signin"
+        data-scope="https://www.googleapis.com/auth/plus.login"
+        data-clientid="10019845388-88j5q9sbgldq3uj4tt2hu6a7et1r25i8.apps.googleusercontent.com"
+        data-redirecturi="postmessage"
+        data-accesstype="offline"
+        data-cookiepolicy="single_host_origin"
+        data-callback="signInCallback">
+      </span>
+    </div>
+    <div id="result"></div>
+{% endblock %}
