@@ -42,3 +42,22 @@ http = credentials.authorize(http)
 service = build(serviceName='calendar', version='v3', http=http,
        developerKey='AIzaSyAv6-nkNFoTIysN0lpdsmCoryjGEup0NKo')
 
+page_token = None
+while True:
+  calendar_list = service.calendarList().list(pageToken=page_token).execute()
+  for calendar_list_entry in calendar_list['items']:
+		if calendar_list_entry['accessRole'] == 'owner':
+			calender_id = calendar_list_entry['id']
+			events = service.events().list(calendarId=calender_id, pageToken=page_token).execute()
+			print calendar_list_entry['summary'] + ":"
+		for event in events['items']:
+			print "\t"+event['summary']
+
+  page_token = calendar_list.get('nextPageToken')
+  if not page_token:
+    break
+'''
+events = service.events().list(calendarId='primary',pageToken=None).execute()
+for event in events['items']:
+	print event['summary']
+'''
