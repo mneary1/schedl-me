@@ -73,6 +73,7 @@ def start_gplus_service():
     session['credentials'] = credentials
     session['gplus_id'] = gplus_id
     response = make_response(json.dumps("Successfully connected user.", 200))
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)
